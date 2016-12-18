@@ -18,6 +18,11 @@ php composer.phar require --prefer-dist vision/yii_pg_int_arr "dev-master"
 -----
 Указываем в AR поля для модификации, а также валидатор:
 
+
+    use vision\yii_pg_int_array\PgIntegerArrayBehavior;
+    use vision\yii_pg_int_array\PgIntegerArrayValidator;
+    
+    
     public function attributesIntArray()
     {
         return [
