@@ -16,7 +16,7 @@ php composer.phar require --prefer-dist vision/yii_pg_int_arr "dev-master"
 
 Использование
 -----
-Указываем в AR поля для модификации, прикрепляем повдеение, а также валидатор:
+Указываем в AR поля для модификации, прикрепляем поведение, а также валидатор:
 
 
     use vision\yii_pg_int_array\PgIntegerArrayBehavior;
