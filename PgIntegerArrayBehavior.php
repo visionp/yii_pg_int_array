@@ -52,9 +52,7 @@ class PgIntegerArrayBehavior extends Behavior
     public function fromIntArray($event)
     {
         foreach($this->getNameAttributes($event) as $attr){
-            if($this->isCorrectArray($this->owner->{$attr})){
-                $this->owner->{$attr} = $this->fromStringToArray($this->owner->{$attr});
-            }
+            $this->owner->{$attr} = $this->fromStringToArray($this->owner->{$attr});
         }
     }
 
