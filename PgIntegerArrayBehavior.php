@@ -80,7 +80,7 @@ class PgIntegerArrayBehavior extends Behavior
      */
     protected function fromArrayToString( $data)
     {
-        return json_encode($data);
+        return $this->encodeData($data);
     }
 
 
@@ -92,10 +92,43 @@ class PgIntegerArrayBehavior extends Behavior
      */
     protected function fromStringToArray($string)
     {
-        $result = json_decode($string);
+        $result = $this->decodeData($string);
         return $result ? $result : $string;
     }
 
+
+    /**
+     * Приведение к кастомному виду (json_encode($value, JSON_FORCE_OBJECT))
+     *
+     * @param array $data
+     * @return string
+     */
+    protected function encodeData(array $data)
+    {
+        //return json_encode($data);
+        $str = "{";
+        $str .= implode($data, ',');
+        return $str . '}';
+    }
+
+
+    /**
+     * Приведение к кастомному виду (json_decode($value))
+     *
+     * @param $data
+     * @return array
+     */
+    protected function decodeData($data)
+    {
+        //$result = json_decode($string);
+        $result = [];
+        if(is_string($data)){
+            $string = ltrim($data, '{');
+            $string = rtrim($string, '}');
+            $result = explode(',', $string);
+        }
+        return array_map('intval', $result);
+    }
 
     /**
      * Возвращает аттрибуты указанные в AR классе
