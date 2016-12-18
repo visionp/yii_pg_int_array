@@ -5,13 +5,13 @@
 Выполните
 
 ```
-php composer.phar require --prefer-dist vision/yii_pg_int_array "dev-master"
+php composer.phar require --prefer-dist vision/yii_pg_int_arr "dev-master"
 ```
 
 или добавьте в ваш composer.json
 
 ```
-"vision/yii_pg_int_array": "dev-master"
+"vision/yii_pg_int_arr": "dev-master"
 ```
 
 Использование

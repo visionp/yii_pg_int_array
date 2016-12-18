@@ -1,5 +1,5 @@
 {
-    "name": "vision/yii_pg_int_array",
+    "name": "vision/yii_pg_int_arr",
     "description": "Array field for AR",
     "type": "yii2-extension",
     "keywords": ["yii2","extension","array field AR","array AR"],
